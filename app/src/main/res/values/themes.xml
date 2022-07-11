@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.CurrencyConverter" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="actionBarSize">55dp</item>
+        <item name="colorPrimary">@color/action_bar</item>
+        <item name="android:statusBarColor">@color/status_bar</item>
+    </style>
+</resources>

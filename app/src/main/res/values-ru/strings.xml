@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Валюты</string>
+    <string name="back">Назад</string>
+    <string name="rate_today">Курс валют на</string>
+    <string name="rate">Курс:</string>
+    <string name="currency_selection_title">Выбор обменной валюты</string>
+    <string name="currency_selection">Выберите обменную валюту</string>
+    <string name="cancel">Отмена</string>
+    <string name="ok">ОК</string>
+    <string name="failed_connection">"Сбой подключения к серверу"</string>
+
+    <string-array name="currencies_names">
+        <item>Российский рубль</item>
+        <item>Доллар США</item>
+        <item>Евро</item>
+        <item>Японская йена</item>
+        <item>Австралийский доллар</item>
+        <item>Азербайджанский манат</item>
+        <item>Британский фунт стерлинга</item>
+        <item>Армянский драм</item>
+        <item>Белорусский рубль</item>
+        <item>Болгарский лев</item>
+    </string-array>
+</resources>

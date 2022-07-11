@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Currencies</string>
+    <string name="back">Return</string>
+    <string name="rate_today">Rates on</string>
+    <string name="rate">Rate:</string>
+    <string name="currency_selection_title">Exchange currency selection</string>
+    <string name="currency_selection">Select an exchange currency</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="failed_connection">"Failed connection to a server"</string>
+    <string name="equal_sign" translatable="false">=</string>
+    <string name="initial" translatable="false">0</string>
+
+    <string-array name="currencies">
+        <item>RUB</item>
+        <item>USD</item>
+        <item>EUR</item>
+        <item>JPY</item>
+        <item>AUD</item>
+        <item>AZN</item>
+        <item>GBP</item>
+        <item>AMD</item>
+        <item>BYN</item>
+        <item>BGN</item>
+    </string-array>
+
+    <string-array name="currencies_names">
+        <item>Russian Ruble</item>
+        <item>United States Dollar</item>
+        <item>Euro</item>
+        <item>Japanese Yen</item>
+        <item>Australian Dollar</item>
+        <item>Azerbaijani Manat</item>
+        <item>British Pound Sterling</item>
+        <item>Armenian Dram</item>
+        <item>Belorusian Ruble</item>
+        <item>Bulgarian Lev</item>
+    </string-array>
+
+    <string-array name="currencies_signs">
+        <item>₽</item>
+        <item>$</item>
+        <item>€</item>
+        <item>¥</item>
+        <item>$</item>
+        <item>₼</item>
+        <item>£</item>
+        <item>֏</item>
+        <item>Br</item>
+        <item>лв</item>
+    </string-array>
+</resources>
