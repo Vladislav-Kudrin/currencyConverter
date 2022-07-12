@@ -29,6 +29,7 @@ There are 10 currencies available:
 4. Install downloaded file on your Android.
 
 Latest release version: [Release v1.0.0](https://github.com/Vladislav-Kudrin/currencyConverter/releases/download/v1.0)
+
 Download latest release: [currencyConverter.apk](https://github.com/Vladislav-Kudrin/currencyConverter/releases/download/v1.0/currencyConverter.apk)
 
 # <a name="ru"></a>Описание
@@ -59,4 +60,5 @@ Currency Converter простое приложение Android 5 приложе�
 4. Установите загруженный файл на Ваш Android.
 
 Последняя релизная версия: [Release v1.0.0](https://github.com/Vladislav-Kudrin/currencyConverter/releases/download/v1.0)
+
 Скачать последний релиз: [currencyConverter.apk](https://github.com/Vladislav-Kudrin/currencyConverter/releases/download/v1.0/currencyConverter.apk)
