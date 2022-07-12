@@ -15,6 +15,9 @@ import androidx.fragment.app.DialogFragment;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.net.SocketAddress;
 import java.net.URL;
 import java.net.URLConnection;
 import java.text.DateFormat;
@@ -29,7 +32,7 @@ import org.json.JSONObject;
  * Runs the main application activity.
  *
  * @author Vladislav
- * @version 1.0
+ * @version 1.1
  * @since 1.0
  */
 public final class MainActivity extends AppCompatActivity implements
@@ -281,7 +284,7 @@ public final class MainActivity extends AppCompatActivity implements
      * Gets and initializes default exchange currencies' rates or from an exchange rates API server.
      *
      * @author Vladislav
-     * @version 1.0
+     * @version 1.1
      * @since 1.0
      */
     private final class APIConnection implements Runnable {
@@ -304,7 +307,33 @@ public final class MainActivity extends AppCompatActivity implements
                 exception.printStackTrace();
             }
 
-            apiConnect();
+            if (isOnline())
+                apiConnect();
+            else
+                System.out.println("No internet access");
+        }
+
+        /**
+         * Checks for internet access.
+         * Returns true if there is internet access and false otherwise.
+         *
+         * @return internet access availability.
+         *
+         * @author Vladislav
+         * @since 1.1
+         */
+        private boolean isOnline() {
+            try {
+                final Socket socket = new Socket();
+                final SocketAddress socketAddress = new InetSocketAddress("8.8.8.8", 53);
+
+                socket.connect(socketAddress, 1500);
+                socket.close();
+
+                return true;
+            } catch (IOException e) {
+                return false;
+            }
         }
 
         /**
