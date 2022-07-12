@@ -8,16 +8,16 @@ The application connects to an exchange rates API server and gets current exchan
 Converter allows select a main currency to be exchanged for other currencies and allows select an exchange currency to convert custom amount of the main currency.
 
 There are 10 currencies available:
-- RUB --- Russian Ruble;
-- USD --- United States Dollar;
-- EUR --- Euro;
-- JPY --- Japanese Yen;
-- AUD --- Australian Dollar;
-- AZN --- Azerbaijani Manat;
-- GBP --- British Pound Sterling;
-- AMD --- Armenian Dram;
-- BYN --- Belarusian Ruble;
-- BGN --- Bulgarian Lev.
+- RUB - Russian Ruble;
+- USD - United States Dollar;
+- EUR - Euro;
+- JPY - Japanese Yen;
+- AUD - Australian Dollar;
+- AZN - Azerbaijani Manat;
+- GBP - British Pound Sterling;
+- AMD - Armenian Dram;
+- BYN - Belarusian Ruble;
+- BGN - Bulgarian Lev.
 
 # Installation
 
@@ -38,16 +38,16 @@ Currency Converter простое приложение Android 5 приложе�
 Конвертер позволяет выбрать главную валюту для конвертации в другие валюты, а также позволяет выбрать обменную валюту для конвертации введённого количества главной валюты.
 
 Для выбора доступно 10 валют:
-- RUB --- Российский рубль;
-- USD --- Доллар США;
-- EUR --- Евро;
-- JPY --- Японская Йена;
-- AUD --- Австралийский доллар;
-- AZN --- Азербайджанский манат;
-- GBP --- Британский фунт стерлинга;
-- AMD --- Армянский драм;
-- BYN --- Белорусский рубль;
-- BGN --- Болгарский лев.
+- RUB - Российский рубль;
+- USD - Доллар США;
+- EUR - Евро;
+- JPY - Японская Йена;
+- AUD - Австралийский доллар;
+- AZN - Азербайджанский манат;
+- GBP - Британский фунт стерлинга;
+- AMD - Армянский драм;
+- BYN - Белорусский рубль;
+- BGN - Болгарский лев.
 
 # Установка
 
