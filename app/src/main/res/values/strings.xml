@@ -8,6 +8,7 @@
     <string name="cancel">Cancel</string>
     <string name="ok">OK</string>
     <string name="failed_connection">"Failed connection to a server"</string>
+    <string name="no_internet_access">"No internet access"</string>
     <string name="equal_sign" translatable="false">=</string>
     <string name="initial" translatable="false">0</string>
 

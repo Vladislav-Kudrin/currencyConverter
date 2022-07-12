@@ -9,6 +9,7 @@
     <string name="cancel">Отмена</string>
     <string name="ok">ОК</string>
     <string name="failed_connection">"Сбой подключения к серверу"</string>
+    <string name="no_internet_access">"Отсутствует доступ к интернету"</string>
 
     <string-array name="currencies_names">
         <item>Российский рубль</item>

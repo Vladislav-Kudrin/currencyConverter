@@ -56,7 +56,7 @@ public final class MainActivity extends AppCompatActivity implements
     /**
      * A JSON response from an exchange rates' API.
      */
-    private static String json = "";
+    private static String json;
     /**
      * A selected exchange currency's code.
      */
@@ -309,8 +309,8 @@ public final class MainActivity extends AppCompatActivity implements
 
             if (isOnline())
                 apiConnect();
-            else
-                System.out.println("No internet access");
+
+            updateUi();
         }
 
         /**
@@ -337,7 +337,8 @@ public final class MainActivity extends AppCompatActivity implements
         }
 
         /**
-         * Initializes exchange rates from an exchange rates' API server if a response is received.
+         * Initializes {@code json} with exchange rates from an exchange rates' API server if a
+         * response is received.
          *
          * @author Vladislav
          * @since 1.0
@@ -351,6 +352,8 @@ public final class MainActivity extends AppCompatActivity implements
                 final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(
                         urlConnection.getInputStream()));
 
+                json = "";
+
                 while ((line = bufferedReader.readLine()) != null)
                     json = json.concat(line);
 
@@ -358,9 +361,21 @@ public final class MainActivity extends AppCompatActivity implements
             } catch (IOException exception) {
                 exception.printStackTrace();
             }
+        }
 
+        /**
+         * Updates exchange currencies' tiles' values.
+         *
+         * @author Vladislav
+         * @since 1.1
+         */
+        private void updateUi() {
             runOnUiThread(() -> {
-                if (json.length() != 0)
+                if (json == null)
+                    Toast.makeText(getApplicationContext(),
+                            getResources().getString(R.string.no_internet_access),
+                            Toast.LENGTH_SHORT).show();
+                else if (json.length() != 0)
                     try {
                         jsonObject = new JSONObject(json);
 
