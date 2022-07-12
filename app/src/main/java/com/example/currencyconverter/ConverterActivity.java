@@ -48,7 +48,7 @@ public final class ConverterActivity extends AppCompatActivity {
         final EditText amount = findViewById(R.id.amount);
         final TextView converted = findViewById(R.id.converted);
 
-        rate = Double.parseDouble(rateString.replaceAll("[^.0-9]", ""));
+        rate = Double.parseDouble(rateString.replace(',', '.').replaceAll("[^.0-9]", ""));
         initialConverted = getResources().getString(R.string.initial).concat(sign);
 
         if ((actionBar = getSupportActionBar()) != null) {
