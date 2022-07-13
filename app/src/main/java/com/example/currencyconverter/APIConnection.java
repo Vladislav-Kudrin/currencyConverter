@@ -105,7 +105,7 @@ final class APIConnection implements Runnable {
     private void apiConnect() {
         try {
             String line;
-            final URL url = new URL("https://v6.exchangerate-api.com/v6/" + APIConfig.CODE +
+            final URL url = new URL("https://v6.exchangerate-api.com/v6/" + KeysStorage.API_KEY +
                     "/latest/RUB");
             final URLConnection urlConnection = url.openConnection();
             final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(

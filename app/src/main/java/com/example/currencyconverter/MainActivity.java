@@ -112,14 +112,14 @@ public class MainActivity extends AppCompatActivity implements
     protected final void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
 
-        currentDate = savedInstanceState.getString("CURRENT_DATE");
-        exchangeCurrency = savedInstanceState.getString("EXCHANGE_CURRENCY");
-        exchangeCurrencySign = savedInstanceState.getString("EXCHANGE_CURRENCY_SIGN");
+        currentDate = savedInstanceState.getString(KeysStorage.CURRENT_DATE);
+        exchangeCurrency = savedInstanceState.getString(KeysStorage.EXCHANGE_CURRENCY);
+        exchangeCurrencySign = savedInstanceState.getString(KeysStorage.EXCHANGE_CURRENCY_SIGN);
 
         ((Button) findViewById(R.id.dateButton)).setText(currentDate);
 
         try {
-            jsonObject = new JSONObject(savedInstanceState.getString("JSON"));
+            jsonObject = new JSONObject(savedInstanceState.getString(KeysStorage.JSON));
 
             getRates();
         } catch (JSONException e) {
@@ -137,10 +137,10 @@ public class MainActivity extends AppCompatActivity implements
      */
     @Override
     protected final void onSaveInstanceState(Bundle outState) {
-        outState.putString("JSON", jsonObject.toString());
-        outState.putString("CURRENT_DATE", currentDate);
-        outState.putString("EXCHANGE_CURRENCY", exchangeCurrency);
-        outState.putString("EXCHANGE_CURRENCY_SIGN", exchangeCurrencySign);
+        outState.putString(KeysStorage.JSON, jsonObject.toString());
+        outState.putString(KeysStorage.CURRENT_DATE, currentDate);
+        outState.putString(KeysStorage.EXCHANGE_CURRENCY, exchangeCurrency);
+        outState.putString(KeysStorage.EXCHANGE_CURRENCY_SIGN, exchangeCurrencySign);
         super.onSaveInstanceState(outState);
     }
 
@@ -266,9 +266,9 @@ public class MainActivity extends AppCompatActivity implements
      * @since 1.0
      */
     public final void onClickCurrencyButton(View view) {
-        converterActivity.putExtra("BUTTON_TEXT",
+        converterActivity.putExtra(KeysStorage.BUTTON_TEXT,
                 String.valueOf(((Button) findViewById(view.getId())).getText()));
-        converterActivity.putExtra("EXCHANGE_CURRENCY_SIGN", exchangeCurrencySign);
+        converterActivity.putExtra(KeysStorage.EXCHANGE_CURRENCY_SIGN, exchangeCurrencySign);
 
         startActivity(converterActivity);
     }

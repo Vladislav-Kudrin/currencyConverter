@@ -41,8 +41,8 @@ public final class ConverterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_converter);
 
         ActionBar actionBar;
-        final String full = getIntent().getExtras().getString("BUTTON_TEXT");
-        final String sign = getIntent().getExtras().getString("EXCHANGE_CURRENCY_SIGN");
+        final String full = getIntent().getExtras().getString(KeysStorage.BUTTON_TEXT);
+        final String sign = getIntent().getExtras().getString(KeysStorage.EXCHANGE_CURRENCY_SIGN);
         final String currency = full.substring(0, 3);
         final String rateString = full.substring(4);
         final EditText amount = findViewById(R.id.amount);
