@@ -14,7 +14,7 @@ import java.util.Locale;
  * Runs a converter activity.
  *
  * @author Vladislav
- * @version 1.0
+ * @version 1.2
  * @since 1.0
  */
 public final class ConverterActivity extends AppCompatActivity {
@@ -123,9 +123,9 @@ public final class ConverterActivity extends AppCompatActivity {
                         amountString = String.format(Locale.getDefault(), "%.0f", resultNumber);
                     else
                         amountString = String.format(Locale.getDefault(),
-                                ((resultNumber < 0.1) ? "%.4f" : "%.2f"), resultNumber);
+                                (resultNumber < 0.1) ? "%.2f" : "%.4f", resultNumber);
 
-                    converted.setText(amountString.concat(sign));
+                    converted.setText(amountString.replaceAll("(?!^)0+$", "").concat(sign));
                 }
             }
         });
