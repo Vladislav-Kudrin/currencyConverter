@@ -37,6 +37,10 @@ final class APIConnection implements Runnable {
      */
     private static String json;
     /**
+     * A no internet access flag.
+     */
+    private static boolean isNoInternetAccess = false;
+    /**
      * {@code jsonObject} key name.
      */
     private static final String CONVERSION_RATES = "conversion_rates";
@@ -66,9 +70,14 @@ final class APIConnection implements Runnable {
             exception.printStackTrace();
         }
 
-        if (isOnline())
-            apiConnect();
+        while (!isOnline())
+            if (!isNoInternetAccess) {
+                isNoInternetAccess = true;
 
+                updateUi();
+            }
+
+        apiConnect();
         updateUi();
     }
 
@@ -91,6 +100,13 @@ final class APIConnection implements Runnable {
 
             return true;
         } catch (IOException e) {
+            if (isNoInternetAccess)
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException exception) {
+                    exception.printStackTrace();
+                }
+
             return false;
         }
     }
