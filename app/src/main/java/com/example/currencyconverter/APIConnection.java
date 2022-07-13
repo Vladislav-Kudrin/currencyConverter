@@ -103,6 +103,8 @@ final class APIConnection implements Runnable {
      * @since 1.0
      */
     private void apiConnect() {
+        json = "";
+
         try {
             String line;
             final URL url = new URL("https://v6.exchangerate-api.com/v6/" + KeysStorage.API_KEY +
@@ -110,8 +112,6 @@ final class APIConnection implements Runnable {
             final URLConnection urlConnection = url.openConnection();
             final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(
                     urlConnection.getInputStream()));
-
-            json = "";
 
             while ((line = bufferedReader.readLine()) != null)
                 json = json.concat(line);
