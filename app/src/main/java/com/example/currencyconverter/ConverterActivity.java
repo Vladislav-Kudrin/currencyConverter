@@ -104,7 +104,7 @@ public final class ConverterActivity extends AppCompatActivity {
             @Override
             public final void onTextChanged(CharSequence charSequence, int start, int before,
                                             int count) {
-                double resultNumber;
+                double result;
                 int charSequenceLength = charSequence.length();
                 String amountString = charSequence.toString();
                 final int minLength = 0;
@@ -117,15 +117,15 @@ public final class ConverterActivity extends AppCompatActivity {
                     amount.setText(amountString.substring(minLength, charSequenceLength));
                     amount.setSelection(charSequenceLength);
                 } else {
-                    resultNumber = Double.parseDouble(amountString) * rate;
+                    result = Double.parseDouble(amountString) * rate;
 
-                    if (resultNumber == Math.floor(resultNumber))
-                        amountString = String.format(Locale.getDefault(), "%.0f", resultNumber);
+                    if (result == Math.floor(result))
+                        amountString = String.format(Locale.getDefault(), "%.0f", result);
                     else
-                        amountString = String.format(Locale.getDefault(),
-                                (resultNumber < 0.1) ? "%.2f" : "%.4f", resultNumber);
+                        amountString = String.format(Locale.getDefault(), (result < 0.1) ? "%.6f" :
+                                "%.2f", result).replaceAll("(?!^)0+$", "");
 
-                    converted.setText(amountString.replaceAll("(?!^)0+$", "").concat(sign));
+                    converted.setText(amountString.concat(sign));
                 }
             }
         });
