@@ -160,8 +160,14 @@ public final class ConverterActivity extends AppCompatActivity {
                 return 7;
             case "BYN":
                 return 8;
-            default:
+            case "BGN":
                 return 9;
+            case "KZT":
+                return 10;
+            case "CNY":
+                return 11;
+            default:
+                return 12;
         }
     }
 

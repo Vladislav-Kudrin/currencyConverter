@@ -226,4 +226,63 @@
         app:layout_constraintStart_toEndOf="@+id/tile8"
         app:layout_constraintTop_toBottomOf="@+id/tile6"
         tools:ignore="ButtonStyle,UsingOnClickInXml" />
+
+    <Button
+        android:id="@+id/tile10"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="monospace"
+        android:onClick="onClickCurrencyButton"
+        android:text=""
+        android:textAllCaps="false"
+        android:textColor="@color/text"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toStartOf="@+id/tile11"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tile7"
+        tools:ignore="ButtonStyle,UsingOnClickInXml" />
+
+    <Button
+        android:id="@+id/tile11"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="monospace"
+        android:onClick="onClickCurrencyButton"
+        android:text=""
+        android:textAllCaps="false"
+        android:textColor="@color/text"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tile8"
+        tools:ignore="ButtonStyle,UsingOnClickInXml" />
+
+    <Button
+        android:id="@+id/tile12"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="monospace"
+        android:onClick="onClickCurrencyButton"
+        android:text=""
+        android:textAllCaps="false"
+        android:textColor="@color/text"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tile11"
+        app:layout_constraintTop_toBottomOf="@+id/tile9"
+        tools:ignore="ButtonStyle,UsingOnClickInXml" />
 </androidx.constraintlayout.widget.ConstraintLayout>

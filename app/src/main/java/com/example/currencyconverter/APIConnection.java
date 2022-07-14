@@ -62,7 +62,7 @@ final class APIConnection implements Runnable {
         try {
             conversionRates = new JSONObject("{\"RUB\":1,\"USD\":1," +
                     "\"EUR\":1,\"JPY\":1,\"AUD\":1,\"AZN\":1,\"GBP\":1,\"AMD\":1,\"BYN\":1," +
-                    "\"BGN\":1}}");
+                    "\"BGN\":1,\"KZT\":1,\"CNY\":1,\"INR\":1}}");
             jsonObject.put(CONVERSION_RATES, conversionRates);
 
             mainActivity.getRates();

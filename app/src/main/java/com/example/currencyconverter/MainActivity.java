@@ -57,9 +57,13 @@ public class MainActivity extends AppCompatActivity implements
      */
     private static String exchangeCurrencySign = "₽";
     /**
+     * An exchange currencies' rates' array's length.
+     */
+    private static final int RATES_LENGTH = 13;
+    /**
      * An exchange currencies' rates' array.
      */
-    private static final double[] RATES = new double[10];
+    private static final double[] RATES = new double[RATES_LENGTH];
     /**
      * {@code jsonObject} key name.
      */
@@ -184,7 +188,7 @@ public class MainActivity extends AppCompatActivity implements
             final double selectedRate = jsonObject.getJSONObject(CONVERSION_RATES)
                     .getDouble(exchangeCurrency);
 
-            for (int index = 0; index < 10; index++) {
+            for (int index = 0; index < RATES_LENGTH; index++) {
                 RATES[index] = selectedRate / jsonObject.getJSONObject(CONVERSION_RATES)
                         .getDouble(getResources().getStringArray(R.array.currencies)[index]);
             }
@@ -204,7 +208,7 @@ public class MainActivity extends AppCompatActivity implements
     private void setRates() {
         int id;
 
-        for (int index = 1; index < 10; index++) {
+        for (int index = 1; index < RATES_LENGTH; index++) {
             id = getResources().getIdentifier("tile" + index, "id",
                     "com.example.currencyconverter");
 

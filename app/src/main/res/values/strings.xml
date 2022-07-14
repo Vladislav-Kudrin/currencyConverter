@@ -23,6 +23,9 @@
         <item>AMD</item>
         <item>BYN</item>
         <item>BGN</item>
+        <item>KZT</item>
+        <item>CNY</item>
+        <item>INR</item>
     </string-array>
 
     <string-array name="currencies_names">
@@ -36,6 +39,9 @@
         <item>Armenian Dram</item>
         <item>Belarusian Ruble</item>
         <item>Bulgarian Lev</item>
+        <item>Kazakhstani Tenge</item>
+        <item>Chinese Yuan</item>
+        <item>Indian Rupee</item>
     </string-array>
 
     <string-array name="currencies_signs">
@@ -49,5 +55,8 @@
         <item>֏</item>
         <item>Br</item>
         <item>лв</item>
+        <item>₸</item>
+        <item>¥</item>
+        <item>₹</item>
     </string-array>
 </resources>
