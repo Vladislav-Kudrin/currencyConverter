@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
+import com.example.currencyconverter.fragments.ExchangeCurrencySelection;
+import com.example.currencyconverter.fragments.SelectionListener;
 import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -26,8 +28,7 @@ import org.json.JSONObject;
  * @version 1.2
  * @since 1.0
  */
-public class MainActivity extends AppCompatActivity implements
-        ExchangeCurrencySelection.SelectionListener {
+public class MainActivity extends AppCompatActivity implements SelectionListener {
     /**
      * An instance of a converter activity.
      */
@@ -169,7 +170,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     /**
-     * @see ExchangeCurrencySelection.SelectionListener#onClickNegativeButton() .
+     * @see SelectionListener#onClickNegativeButton() .
      *
      * @author Vladislav
      * @since 1.0

@@ -1,4 +1,4 @@
-package com.example.currencyconverter;
+package com.example.currencyconverter.fragments;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -6,15 +6,16 @@ import android.content.Context;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
+import com.example.currencyconverter.R;
 
 /**
  * Runs an exchange currency selection dialog fragment.
  *
  * @author Vladislav
- * @version 1.0
+ * @version 1.2
  * @since 1.0
  */
-public final class ExchangeCurrencySelection extends DialogFragment {
+public class ExchangeCurrencySelection extends DialogFragment {
     /**
      * A user's currency selection.
      */
@@ -22,7 +23,7 @@ public final class ExchangeCurrencySelection extends DialogFragment {
     /**
      * A listener of a user's currency selection.
      */
-    static SelectionListener selectionListener;
+    private static SelectionListener selectionListener;
 
     /**
      * Attaches {@code context} to {@code selectionListener}.
@@ -69,34 +70,5 @@ public final class ExchangeCurrencySelection extends DialogFragment {
                         selectionListener.onClickNegativeButton());
 
         return dialogBuilder.create();
-    }
-
-    /**
-     * Listens user's currency selections.
-     *
-     * @author Vladislav
-     * @version 1.0
-     * @since 1.0
-     */
-    protected interface SelectionListener {
-        /**
-         * Performs actions if an exchange currency selection is confirmed.
-         *
-         * @param currency a selected exchange currency.
-         * @param sign a selected exchange currency's sign.
-         * @param selection a selected exchange currency's code.
-         *
-         * @author Vladislav
-         * @since 1.0
-         */
-        void onClickPositiveButton(String currency, String sign, int selection);
-
-        /**
-         * Performs actions if an exchange currency selection is canceled.
-         *
-         * @author Vladislav
-         * @since 1.0
-         */
-        void onClickNegativeButton();
     }
 }
