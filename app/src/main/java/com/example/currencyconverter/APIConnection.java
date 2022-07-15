@@ -45,6 +45,16 @@ final class APIConnection implements Runnable {
      */
     private static final String CONVERSION_RATES = "conversion_rates";
 
+    /**
+     * Constructs an api connection thread.
+     *
+     * @param mainActivity a submitter main activity class.
+     * @param jsonObject a modifiable set of currency/rate mappings from the submitter main
+     *                   activity class.
+     *
+     * @author Vladislav
+     * @since 1.2
+     */
     public APIConnection(MainActivity mainActivity, JSONObject jsonObject) {
         APIConnection.mainActivity = mainActivity;
         APIConnection.jsonObject = jsonObject;

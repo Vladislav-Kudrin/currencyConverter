@@ -28,7 +28,7 @@ import org.json.JSONObject;
  * @version 1.2
  * @since 1.0
  */
-public class MainActivity extends AppCompatActivity implements SelectionListener {
+public final class MainActivity extends AppCompatActivity implements SelectionListener {
     /**
      * An instance of a converter activity.
      */

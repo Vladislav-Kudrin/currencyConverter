@@ -15,7 +15,7 @@ import com.example.currencyconverter.R;
  * @version 1.2
  * @since 1.0
  */
-public class ExchangeCurrencySelection extends DialogFragment {
+public final class ExchangeCurrencySelection extends DialogFragment {
     /**
      * A user's currency selection.
      */
