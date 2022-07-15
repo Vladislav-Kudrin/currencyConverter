@@ -1,6 +1,7 @@
 package com.example.currencyconverter;
 
 import android.widget.Toast;
+import com.example.currencyconverter.db.DBHandler;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.BufferedReader;
@@ -21,15 +22,23 @@ import java.net.URLConnection;
  */
 final class APIConnection implements Runnable {
     /**
+     * A latest exchange rates API server response's timestamp.
+     */
+    private static long timestamp;
+    /**
+     * A database handler for a submitter main activity class.
+     */
+    private static DBHandler dbHandler;
+    /**
      * A modifiable set of currency/rate mappings from a submitter main activity class.
      */
     private static JSONObject jsonObject;
     /**
-     * A modifiable set of currency/rate mappings from.
+     * A modifiable set of currency/rate mappings.
      */
     private static JSONObject conversionRates;
     /**
-     * Submitter main activity class.
+     * The submitter main activity class.
      */
     private static MainActivity mainActivity;
     /**
@@ -46,9 +55,9 @@ final class APIConnection implements Runnable {
     private static final String CONVERSION_RATES = "conversion_rates";
 
     /**
-     * Constructs an api connection thread.
+     * Creates a new api connection thread with a submitter's main activity class and json object.
      *
-     * @param mainActivity a submitter main activity class.
+     * @param mainActivity the submitter main activity class.
      * @param jsonObject a modifiable set of currency/rate mappings from the submitter main
      *                   activity class.
      *
@@ -58,6 +67,7 @@ final class APIConnection implements Runnable {
     public APIConnection(MainActivity mainActivity, JSONObject jsonObject) {
         APIConnection.mainActivity = mainActivity;
         APIConnection.jsonObject = jsonObject;
+        APIConnection.dbHandler = new DBHandler(mainActivity);
     }
 
     /**
@@ -70,9 +80,7 @@ final class APIConnection implements Runnable {
     @Override
     public final void run() {
         try {
-            conversionRates = new JSONObject("{\"RUB\":1,\"USD\":1," +
-                    "\"EUR\":1,\"JPY\":1,\"AUD\":1,\"AZN\":1,\"GBP\":1,\"AMD\":1,\"BYN\":1," +
-                    "\"BGN\":1,\"KZT\":1,\"CNY\":1,\"INR\":1}}");
+            conversionRates = new JSONObject(dbHandler.getJson());
             jsonObject.put(CONVERSION_RATES, conversionRates);
 
             mainActivity.getRates();
@@ -80,15 +88,17 @@ final class APIConnection implements Runnable {
             exception.printStackTrace();
         }
 
-        while (!isOnline())
-            if (!isNoInternetAccess) {
-                isNoInternetAccess = true;
+        if ((timestamp = System.currentTimeMillis()) > dbHandler.getTimestamp()) {
+            while (!isOnline())
+                if (!isNoInternetAccess) {
+                    isNoInternetAccess = true;
 
-                updateUi();
-            }
+                    updateUi();
+                }
 
-        apiConnect();
-        updateUi();
+            apiConnect();
+            updateUi();
+        }
     }
 
     /**
@@ -166,6 +176,8 @@ final class APIConnection implements Runnable {
 
                     jsonObject.put(CONVERSION_RATES,
                             conversionRates.getJSONObject(CONVERSION_RATES));
+                    dbHandler.updateResponse(jsonObject.getJSONObject(CONVERSION_RATES).toString(),
+                            timestamp);
                     mainActivity.getRates();
                 } catch (JSONException exception) {
                     exception.printStackTrace();
